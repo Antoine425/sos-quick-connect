@@ -6,7 +6,7 @@ import { VitePWA } from "vite-plugin-pwa";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/sos-quick-connect/' : '/',
+  base: mode === 'production' ? '/sos-connect-2/' : '/',
   server: {
     host: "::",
     port: 8080,
@@ -25,8 +25,8 @@ export default defineConfig(({ mode }) => ({
         background_color: "#FFFFFF",
         display: "standalone",
         orientation: "portrait",
-        scope: "/",
-        start_url: "/",
+        scope: mode === 'production' ? '/sos-connect-2/' : '/',
+        start_url: mode === 'production' ? '/sos-connect-2/' : '/',
         icons: [
           {
             src: "/icon-192.png",
